@@ -240,7 +240,7 @@ impl Controller<'_> {
         line_ranges: &LineRanges,
     ) -> Result<()> {
         let mut current_line_buffer: Vec<u8> = Vec::new();
-        let mut current_line_number: usize = 1;
+        let mut current_line_number: usize = 0;
         // Buffer needs to be 1 greater than the offset to have a look-ahead line for EOF
         let buffer_size: usize = line_ranges.largest_offset_from_end() + 1;
         // Buffers multiple line data and line number

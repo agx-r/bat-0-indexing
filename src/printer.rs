@@ -609,7 +609,7 @@ impl Printer for InteractivePrinter<'_> {
                 Some(ContentType::UTF_16BE) => UTF_16BE.decode_with_bom_removal(line_buffer).0,
                 _ => {
                     let line = String::from_utf8_lossy(line_buffer);
-                    if line_number == 1 {
+                    if line_number == 0 {
                         match line.strip_prefix('\u{feff}') {
                             Some(stripped) => stripped.to_string().into(),
                             None => line,
